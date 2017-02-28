@@ -1,26 +1,3 @@
-'''import functions
-
-for n in range(2, 10):
-    for x in range(2, n):
-        if n % x == 0:
-            print(n, '=', x, '*', int(n / x))
-            break
-    else:
-        print(n, 'is a prime number')
-
-print(functions.ask_ok('Ну че бля пизда тебе или нет?\n'))
-
-
-def fprintf(file, format, *args):
-    file.write(format % args[0])
-
-fprintf(open('1.txt', 'w'),5,2,1,4)
-
-
-'''
-
-import lxml.html as html
-from pandas import DataFrame
 import requests
 
 clothes_name = 'Rigid Slim'
@@ -67,10 +44,40 @@ super_style = super_code[number_end+7:number_end+12]
 
 payload = {'utf8':'✓', 'style':17368, 'size':33267, 'commit':'add+to+basket'}
 
-rr=requests.post(my_super_href_hui_govno, data = payload)
+'''rr=requests.post(domain+"/shop/302253/add", data = payload)
 print(rr.status_code, rr.reason)
-page_clothes = requests.get(my_super_href_hui_govno, headers).text
+print(rr.text)
+page_cart = requests.get(domain+"/shop/cart", headers).text
+#print(page_cart)
 
+'''
+
+import http.client
+import urllib.parse
+domain = 'www.supremenewyork.com'
+params = urllib.parse.urlencode(payload)
+headers = {"Content-type": "application/x-www-form-urlencoded",
+           "Accept": "text/plain"}
+conn = http.client.HTTPConnection(domain+"/shop/302253/add")
+conn.request("POST", "", params, headers)
+
+response = conn.getresponse()
+print(response.status, response.reason)
+
+data = response.read()
+print(data)
+
+conn.close()
+
+
+
+
+
+
+'''
 ss = page_clothes.find('button checkout')
 sss = page_clothes.rfind(' id=\'cart', 0, ss)
 #print(page_clothes[sss:])
+'''
+
+
