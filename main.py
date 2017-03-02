@@ -69,7 +69,7 @@ auth_token = rrr[authenticity_start:authenticity_start+88]
 user_info = {
     "utf8":"✓",
     "authenticity_token":auth_token,
-    "order[billing_name]":"Evgeniy+Medvedev",
+    "order[billing_name]":"asdasdasd",
     "order[email]":"fedor.chuprakov@mail.ru",
     "order[tel]":"+79091505477",
     "order[billing_address]":"Dybenko+st.+16+k+1+apartment+20",
@@ -81,10 +81,10 @@ user_info = {
     "same_as_billing_address":"1",
     "store_credit_id":"",#This must be left empty
     "credit_card[type]":"master",
-    "credit_card[cnb]":"5469+3800+5519+2081",
+    "credit_card[cnb]":"asdasdasdasdadasdasd",
     "credit_card[month]":"10",
     "credit_card[year]":"2021",
-    "credit_card[vval]":"369",
+    "credit_card[vval]":"sdfdsfsdfsdf",
     #"order[terms]":"0",
     "order[terms]":"1",
     "hpcvv":""
